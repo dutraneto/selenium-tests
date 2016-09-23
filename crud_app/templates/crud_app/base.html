@@ -1,0 +1,23 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pertences</title>
+    <link rel="stylesheet" href="{% static 'css/crud_app.css' %}">
+</head>
+<body>
+
+    <header>
+        <a href='{% url 'listagem' %}' class="inicio"><h1>Lista de Pertences</h1></a>
+        <a href='{% url 'cadastrarPessoa' %}'class="cadastrar">Cadastrar</a>
+    </header>
+
+    <div class="conteudo">
+        {% block conteudo %}
+        {% endblock conteudo%}
+    </div>
+
+</body>
+</html>

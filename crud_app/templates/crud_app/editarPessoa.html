@@ -1,0 +1,15 @@
+{% extends 'crud_app/base.html' %}
+
+{% block conteudo %}
+
+    <h2 class="titulo">Editando {{ nome_pessoa }}</h2>
+
+    <form method="post">{% csrf_token %}
+        Nome: {{ form.nome_pessoa }}<br><br>
+        Endereço: {{ form.endereco }}<br><br>
+        CPF: {{ form.cpf }}<br><br>
+        <br>
+        <button class="botao" type="submit">Salvar</button>
+    </form>
+
+{% endblock %}

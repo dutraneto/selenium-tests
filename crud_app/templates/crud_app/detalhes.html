@@ -1,0 +1,53 @@
+{% extends 'crud_app/base.html' %}
+
+{% block conteudo %}
+    <h2 class="titulo">{{ pessoa.nome_pessoa }}</h2>
+    <div class="informacoes">
+        <h2>Dados pessoais</h2>
+        <div class="dados_pessoais">
+            <h3>Endereço:</h3> <p>{{ pessoa.endereco }}</p>
+            <h3>CPF:</h3> <p>{{ pessoa.cpf }}</p>
+        </div>
+
+        <h2>Pertences</h2>
+        <div class="informacoes_pertences">
+            <table class="detalhes">
+                <tr>
+                    {% if pertences.count > 0 %}
+                        {% for p in pertences %}
+                            <td>
+                                <h3>Nome:</h3><p>{{ p.nome_pertence }}</p>
+                                <h3>Descrição</h3><p>{{ p.descricao|linebreaksbr }}</p>
+                                <h6>({{ p.data_criacao }})</h6>
+                            </td>
+                        {% endfor %}
+                    {% else %}
+                        <p>{{ pertences }}</p>
+                    {% endif %}
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <button id="id_botao_editar" class="botao" onclick="window.location.href='{% url 'editarPessoa' pk=pessoa.pk %}'">
+        Editar Pessoa
+    </button>
+    <button class="botao" onclick="window.location.href='{% url 'cadastrarPertences' pk=pessoa.pk %}'">
+        Cadastrar pertences
+    </button>
+    <button id="id_botao_excluir" class="botao" onclick="confirmacao()">
+        Excluir
+    </button>
+
+    <script lang="JavaScript">
+    function confirmacao() {
+        var resposta = confirm("Deseja remover [ {{ pessoa.nome_pessoa }} ]?");
+
+        if(resposta == true){
+            alert("Exclusão executada com sucesso");
+            window.location.href="{% url 'excluir' pk=pessoa.pk %}";
+        }
+    }
+    </script>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'crud_app/base.html' %}
+
+{% block conteudo %}
+
+    <h2 class="titulo">Pessoas</h2>
+    <div class="lista_pessoas">
+        <ol>
+            {% for p in pessoa %}
+                <ul><a href={% url 'detalhes' pk=p.pk %}>{{ p.nome_pessoa }}</a></ul>
+            {% endfor %}
+        </ol>
+    </div>
+
+{% endblock %}

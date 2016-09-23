@@ -1,0 +1,183 @@
+/* GERAL */
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration:none;
+    color: black;
+}
+
+button.botao {
+    display:inline-block;
+    padding:10px 12px;
+    margin: 30px 0px 30px 0px;
+    border:1px solid #ccc;
+    background-color:#f2f2f2;
+    color:#333;
+    font:15px arial, sans-serif;
+}
+
+
+/* HEADER */
+
+header {
+    display: block;
+    margin: -10px -8px 0px -10px;
+    padding: 10px 0px 20px 40px;
+    background-color: lightgray;
+}
+
+
+/* FORMULÁRIOS */
+
+form {
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    width: 400px;
+    padding-left: 20px;
+    animation-duration: 1s;
+    animation-name: entra_opacidade;
+}
+
+form input, textarea {
+    margin: 0px;
+    font-size: 12pt;
+    font-family: Arial, sans-serif;
+    padding: 4px;
+    width: 100%;
+}
+
+form button {
+    float: right;
+    margin: 20px -10px 0px 0px;
+}
+
+
+/* BASE.html */
+
+a.inicio {
+    transition-delay: .1s;
+    transition-duration: .3s;
+    transition-timing-function: ease-out;
+}
+
+a.inicio:hover {
+    text-decoration: none;
+    transition-delay: .1s;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+    font-size: 110%;
+}
+
+a.cadastrar {
+    border-bottom: 2px solid gray;
+    padding: 20px 20px;
+}
+
+a.cadastrar:hover {
+    background-color: rgba(112, 128, 144, 0.2);
+}
+
+div.conteudo {
+    height: 100%;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-bottom: 0;
+    margin-bottom: 60px;
+}
+
+div.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: -10px -8px 0px -10px;
+    padding: 0px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+
+/* POST_LIST.html */
+
+div.lista_pessoas ol {
+    padding-left: 20px;
+}
+
+div.lista_pessoas ul {
+    padding-left: 0px;
+    padding-bottom: 10px;
+    transition-delay: .2s;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+
+}
+
+div.lista_pessoas ul:hover {
+    padding-left: 20px;
+    transition-delay: .2s;
+    transition-duration: .5s;
+    transition-timing-function: ease-out;
+}
+
+a.pessoa {
+    font-size: 15pt;
+}
+
+
+/* POST_DETAIL.html */
+
+@keyframes borda_desliza {
+    from {
+        border-left: 2px solid black;
+        padding-left: 0px;
+    }
+    to {
+        border-left: 2px solid black;
+        padding-left: 10px;
+    }
+}
+
+@keyframes entra_opacidade {
+    from {
+        opacity: 0;
+        padding-left: 0px;
+    }
+    to {
+        opacity: 1;
+        padding-left: 20px;
+    }
+}
+
+h2.titulo {
+    border-left: 2px solid black;
+    padding-left: 10px;
+    animation-duration: 2s;
+    animation-name: borda_desliza;
+}
+
+div.informacoes, .dados_pessoais , .informacoes_pertences, .lista_pessoas {
+    margin-bottom: 0px;
+    padding-left: 20px;
+    animation-duration: 1s;
+    animation-name: entra_opacidade;
+}
+
+table.detalhes {
+    text-align: justify;
+    display: table;
+    margin-top: -20px;
+}
+
+td {
+    padding-right: 40px;
+    width: 200px;
+    vertical-align: top;
+}
