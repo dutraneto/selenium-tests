@@ -13,21 +13,22 @@ class Enderecos():
         self.id = id
         return self.devolve_localhost() + '/' + self.view + '/' + self.id
 
-    #deve inserir dados da pessoa por aqui
+    #deve inserir dados da pessoa por aqui para criar um cadastro novo
     def devolve_dados_pessoa(self, *args):
 
         args = [
-            'Adriano Ferreira',
-            'Vila Militar',
-            '000111222333'
+            'ADRIANO OLIVEIRA', #digite o nome
+            'VILA MILITAR', #endereco
+            '123456' #cpf
         ]
         return args
 
+    # deve inserir dados da pessoa por aqui para editar um cadastro
     def devolve_dados_pessoa_editado(self, *args):
         args = [
-            'Wall Carneiro',
-            'Pantanal',
-            '12345678900'
+            'WALL CARNEIRO', #nome
+            'PANTANAL', #endereco
+            '000000000' #cpf
         ]
         return args
 
@@ -77,7 +78,7 @@ class TestCadastroPessoas(TestCase):
 
     def test_deve_editar_cadastro(self):
         url = Enderecos()
-        self.driver.get(url.devolve_view('pessoa', '44')) # passa o ID
+        self.driver.get(url.devolve_view('pessoa', '9')) # passa o ID
         # verifica se existe cadastro
         try:
             #abre edita cadastro
@@ -108,7 +109,7 @@ class TestCadastroPessoas(TestCase):
         url = Enderecos()
         html_antes = self.driver.page_source
         try:
-            self.driver.get(url.devolve_view('pessoa', '65')) #escolher o id para mudar
+            self.driver.get(url.devolve_view('pessoa', '72')) #escolher o id para mudar
         finally:
             print('Pegou id')
 
